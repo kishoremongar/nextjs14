@@ -2,5 +2,5 @@
 
 # Your WIP script
 # ...
-
+console.log("pre-commit tested")
 exit 1
