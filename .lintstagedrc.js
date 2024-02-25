@@ -1,5 +1,5 @@
 module.exports = {
   '**/*.(js|jsx)': (filenames) => [
-    `npm run eslint -- --fix ${filenames.join(' ')}`,
+    `npm run eslint --fix ${filenames.join(' ')}`,
   ],
 };
