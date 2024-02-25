@@ -19,6 +19,9 @@
     "*.{js,jsx}": "eslint --fix",
     "**/*.{js,jsx,ts,tsx}": [
       "eslint --fix"
+    ],
+    "**/*.{js,jsx}": [
+      "npm run lint"
     ]
   },
   "devDependencies": {
