@@ -23,6 +23,46 @@
         ],
         "newlines-between": "always"
       }
+    ],
+    //
+    "semi": 1,
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "linebreak-style": ["error", "windows"],
+    "quotes": [
+      2,
+      "single",
+      { "avoidEscape": true, "allowTemplateLiterals": true }
+    ],
+    "jsx-quotes": [2, "prefer-single"],
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "operator-linebreak": [
+      "error",
+      "after",
+      { "overrides": { "?": "before", ":": "before" } }
+    ],
+    "comma-dangle": ["error", "only-multiline"],
+    "implicit-arrow-linebreak": 0,
+    "function-paren-newline": 0,
+    "react/jsx-curly-newline": 0,
+    "no-restricted-syntax": [
+      "error",
+      "FunctionExpression",
+      "WithStatement",
+      "BinaryExpression[operator='in']"
+    ],
+    "no-restricted-globals": ["error", "event", "fdescribe"],
+    "no-unsafe-optional-chaining": "warn",
+    "no-nested-ternary": 0,
+    "no-param-reassign": ["error", { "props": false }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": false,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
     ]
   }
 }
