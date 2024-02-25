@@ -2,8 +2,7 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:@next/next/recommended",
-    "plugin:react/recommended",
-    "airbnb"
+    "plugin:react/recommended"
   ],
   "rules": {
     "no-unused-vars": "error",
@@ -30,7 +29,6 @@
       }
     ],
     //
-    "comma-dangle": ["error", "only-multiline"],
     "implicit-arrow-linebreak": 0,
     "function-paren-newline": 0,
     "react/jsx-curly-newline": 0,
