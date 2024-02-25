@@ -1,5 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "airbnb"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@next/next/recommended",
+    "plugin:react/recommended",
+    "airbnb"
+  ],
   "rules": {
     "no-unused-vars": "error",
     "sort-imports": [

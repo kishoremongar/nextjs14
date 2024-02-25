@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "prepare": "node .husky/install.mjs"
+    "lint": "eslint .",
+    "prepare": "node .husky/install.mjs",
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "eslint-config-airbnb": "^19.0.4",
@@ -17,7 +18,15 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": "eslint --fix",
-    "*.{js,jsx}": "eslint --fix"
+    "*.{js,jsx}": "eslint --fix",
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
