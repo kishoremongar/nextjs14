@@ -1,4 +1,5 @@
 module.exports = {
-  // Lint & Prettify TS and JS files
-  '**/*.(jsx|js)': (filenames) => [`npm run eslint ${filenames.join(' ')}`],
+  '**/*.(ts|tsx|js)': (filenames) => [
+    `npm run eslint -- --fix ${filenames.join(' ')}`,
+  ],
 };
