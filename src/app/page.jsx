@@ -1,8 +1,11 @@
+import Image from "next/image";
+
 export default function Home() {
-  const abc = 1454000;
+  const abc = 145455000;
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       Hello world
+      <Image />
     </main>
   );
 }

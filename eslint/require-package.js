@@ -28,7 +28,7 @@ module.exports = (configName, packageName) => {
     log();
     log("To install it, run:");
     log(
-      `- ${packageManager} ${command} ${packageName}@${pkgJson.peerDependencies[packageName]}`
+      `- ${packageManager} ${command} ${packageName}@${pkgJson.devDependencies[packageName]}`
     );
 
     process.exit(1);
