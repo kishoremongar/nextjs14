@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --fix",
-    "prepare": "husky install",
-    "eslint-check": "eslint --max-warnings=0 ."
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "14.1.0",
@@ -20,19 +19,16 @@
       "npm run lint"
     ]
   },
-  "exports": {
-    "./eslint/*": "./eslint/*.js"
-  },
-  "files": [
-    "eslint"
-  ],
   "devDependencies": {
+    "@babel/eslint-parser": "^7.23.10",
     "@next/eslint-plugin-next": "^14.1.0",
+    "@rushstack/eslint-patch": "^1.7.2",
     "@tanstack/eslint-plugin-query": "^5.20.1",
     "autoprefixer": "^10.0.1",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "14.1.0",
+    "eslint-plugin-unicorn": "^51.0.1",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "postcss": "^8",

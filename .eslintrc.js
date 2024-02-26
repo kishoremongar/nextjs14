@@ -14,7 +14,7 @@ module.exports = {
     "next/core-web-vitals",
     "plugin:@next/next/recommended",
     "plugin:@tanstack/eslint-plugin-query/recommended",
-    "./eslint/next",
+    "./eslint/node",
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -35,6 +35,7 @@ module.exports = {
     {
       files: ["eslint/rules/**"],
       rules: {
+        ...disabledRules,
         "sort-keys": "error",
       },
     },
