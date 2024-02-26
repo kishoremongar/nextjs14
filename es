@@ -1,57 +1,73 @@
-{
-  "env": {
-    "browser": true,
-    "es2021": true
+const disabledRules = {
+  "react/prop-types": "off",
+  "react/react-in-jsx-scope": "off",
+  "no-use-before-define": "off",
+  "jsx-a11y/no-onchange": "off",
+};
+
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
   },
-  "extends": [
+  extends: [
     "next/core-web-vitals",
     "plugin:@next/next/recommended",
-    "plugin:react/recommended",
-    "airbnb"
+    "airbnb",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
   ],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  "settings": {
+  settings: {
     "import/resolver": {
-      "node": {
-        "paths": ["src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
+      node: {
+        paths: ["src"],
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
   },
-  "rules": {
+  overrides: [
+    {
+      files: ["eslint/rules/**"],
+      rules: {
+        "sort-keys": "error",
+      },
+    },
+  ],
+  rules: {
+    ...disabledRules,
     "sort-imports": [
       "error",
       {
-        "ignoreCase": true,
-        "ignoreDeclarationSort": true,
-        "ignoreMemberSort": false
-      }
+        ignoreCase: true,
+        ignoreDeclarationSort: true,
+        ignoreMemberSort: false,
+      },
     ],
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal"],
-        "pathGroups": [
+        groups: ["builtin", "external", "internal"],
+        pathGroups: [
           {
-            "pattern": "react",
-            "group": "external",
-            "position": "before"
-          }
+            pattern: "react",
+            group: "external",
+            position: "before",
+          },
         ],
-        "newlines-between": "always"
-      }
+        "newlines-between": "always",
+      },
     ],
     //vercel
     "array-callback-return": "warn",
-    "default-case": ["warn", { "commentPattern": "^no default$" }],
+    "default-case": ["warn", { commentPattern: "^no default$" }],
     "dot-location": ["warn", "property"],
-    "eqeqeq": ["warn", "smart"],
+    eqeqeq: ["warn", "smart"],
     "new-parens": "warn",
     "no-array-constructor": "warn",
     "no-caller": "warn",
@@ -76,20 +92,20 @@
     "no-invalid-regexp": "warn",
     "no-iterator": "warn",
     "no-label-var": "warn",
-    "no-labels": ["warn", { "allowLoop": true, "allowSwitch": false }],
+    "no-labels": ["warn", { allowLoop: true, allowSwitch: false }],
     "no-lone-blocks": "warn",
     "no-loop-func": "warn",
     "no-mixed-operators": [
       "warn",
       {
-        "groups": [
+        groups: [
           ["&", "|", "^", "~", "<<", ">>", ">>>"],
           ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
           ["&&", "||"],
-          ["in", "instanceof"]
+          ["in", "instanceof"],
         ],
-        "allowSamePrecedence": false
-      }
+        allowSamePrecedence: false,
+      },
     ],
     "no-multi-str": "warn",
     "no-native-reassign": "warn",
@@ -106,9 +122,9 @@
       "warn",
       "WithStatement",
       {
-        "message": "substr() is deprecated, use slice() or substring() instead",
-        "selector": "MemberExpression > Identifier[name='substr']"
-      }
+        message: "substr() is deprecated, use slice() or substring() instead",
+        selector: "MemberExpression > Identifier[name='substr']",
+      },
     ],
     "no-script-url": "warn",
     "no-self-assign": "warn",
@@ -125,20 +141,19 @@
     "no-unused-expressions": [
       "error",
       {
-        "allowShortCircuit": true,
-        "allowTernary": true,
-        "allowTaggedTemplates": true
-      }
+        allowShortCircuit: true,
+        allowTernary: true,
+        allowTaggedTemplates: true,
+      },
     ],
     "no-unused-labels": "warn",
     "no-unused-vars": [
-      "warn",
+      "error",
       {
-        "args": "none",
-        "ignoreRestSiblings": true
-      }
+        args: "none",
+        ignoreRestSiblings: true,
+      },
     ],
-    "no-use-before-define": "off",
     "no-useless-computed-key": "warn",
     "no-useless-concat": "warn",
     "no-useless-constructor": "warn",
@@ -146,22 +161,22 @@
     "no-useless-rename": [
       "warn",
       {
-        "ignoreDestructuring": false,
-        "ignoreImport": false,
-        "ignoreExport": false
-      }
+        ignoreDestructuring: false,
+        ignoreImport: false,
+        ignoreExport: false,
+      },
     ],
     "no-with": "warn",
     "no-whitespace-before-property": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "require-yield": "warn",
     "rest-spread-spacing": ["warn", "never"],
-    "strict": ["warn", "never"],
+    strict: ["warn", "never"],
     "unicode-bom": ["warn", "never"],
     "use-isnan": "warn",
     "valid-typeof": "warn",
     "getter-return": "warn",
-    "react/forbid-foreign-prop-types": ["warn", { "allowInPropTypes": true }],
+    "react/forbid-foreign-prop-types": ["warn", { allowInPropTypes: true }],
     "react/jsx-no-comment-textnodes": "warn",
     "react/jsx-no-duplicate-props": "warn",
     "react/jsx-no-target-blank": "warn",
@@ -169,9 +184,9 @@
     "react/jsx-pascal-case": [
       "warn",
       {
-        "allowAllCaps": true,
-        "ignore": []
-      }
+        allowAllCaps: true,
+        ignore: [],
+      },
     ],
     "react/jsx-uses-react": "warn",
     "react/jsx-uses-vars": "warn",
@@ -180,26 +195,25 @@
     "react/no-direct-mutation-state": "warn",
     "react/no-is-mounted": "warn",
     "react/no-typos": "error",
-    "react/react-in-jsx-scope": "off",
     "react/require-render-return": "error",
     "react/style-prop-object": "warn",
     "react-hooks/rules-of-hooks": "error",
     //mf
-    "react/prop-types": "off",
     "implicit-arrow-linebreak": 0,
     "function-paren-newline": 0,
     "react/jsx-curly-newline": 0,
     "no-restricted-globals": ["error", "event", "fdescribe"],
     "no-unsafe-optional-chaining": "warn",
     "no-nested-ternary": 0,
-    "no-param-reassign": ["error", { "props": false }],
+    "no-param-reassign": ["error", { props: false }],
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": false,
-        "optionalDependencies": false,
-        "peerDependencies": false
-      }
-    ]
-  }
-}
+        devDependencies: false,
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
+    //vercel guide
+  },
+};
