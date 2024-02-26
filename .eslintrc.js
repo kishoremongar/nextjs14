@@ -1,8 +1,8 @@
 const disabledRules = {
-  "react/prop-types": "off",
-  "react/react-in-jsx-scope": "off",
-  "no-use-before-define": "off",
-  "jsx-a11y/no-onchange": "off",
+  'react/prop-types': 'off',
+  'react/react-in-jsx-scope': 'off',
+  'no-use-before-define': 'off',
+  'jsx-a11y/no-onchange': 'off',
 };
 
 module.exports = {
@@ -11,32 +11,36 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "next/core-web-vitals",
-    "plugin:@next/next/recommended",
-    "plugin:@tanstack/eslint-plugin-query/recommended",
-    "./eslint/node",
+    'next/core-web-vitals',
+    'plugin:@next/next/recommended',
+    'plugin:@tanstack/eslint-plugin-query/recommended',
+    './eslint/node',
   ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       node: {
-        paths: ["src"],
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        paths: ['src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },
+  // plugins: ['simple-import-sort', 'import'],
   overrides: [
     {
-      files: ["eslint/rules/**"],
+      files: ['eslint/rules/**'],
       rules: {
         ...disabledRules,
-        "sort-keys": "error",
+        'sort-keys': 'error',
+        // 'simple-import-sort/imports': 'error',
+        // 'simple-import-sort/exports': 'error',
+        // 'import/no-duplicates': 'error',
       },
     },
   ],

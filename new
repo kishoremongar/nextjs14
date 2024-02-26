@@ -1,0 +1,35 @@
+module.exports = {
+  //match with file es
+  'react/jsx-uses-react': 'warn',
+  'react/jsx-no-undef': 'error',
+  'react-hooks/rules-of-hooks': 'error',
+  'react-hooks/exhaustive-deps': 'warn',
+  'react/jsx-curly-newline': 0,
+
+  //unmatched or new
+  'no-unescaped-entities': 'error',
+  'react/no-danger': 'error',
+  'react/jsx-no-script-url': 'error',
+  'react/destructuring-assignment': 'error',
+  'react/jsx-props-no-spreading': 'error',
+  'react/default-props-match-prop-types': 'error',
+  'react/no-unused-prop-types': 'error',
+  'react/no-unused-class-component-methods': 'error',
+  'react/no-unknown-property': 'error',
+  'react/sort-prop-types': 'error',
+  'promise/always-return': 'error',
+  'react/jsx-key': 'error',
+  'react/jsx-no-constructed-context-values': 'error',
+  'react/jsx-max-depth': 'error',
+  'react/no-children-prop': 'warn',
+  'react/display-name': 'warn',
+  'no-access-state-in-setstate': 'warn',
+  //stricter
+  'react/prefer-read-only-props': 'warn',
+  'react/jsx-no-bind': 'warn',
+  'react/no-multi-comp': 'warn',
+  'react-refresh': 'error',
+  //off
+  'import/prefer-default-export': 'off',
+  'react/require-extension': 'off',
+};
