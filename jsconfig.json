@@ -5,5 +5,5 @@
     },
     "resolveJsonModule": true
   },
-  "include": ["./*.json"]
+  "include": ["./*.json", "jest.setup.js"]
 }

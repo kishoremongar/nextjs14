@@ -11,6 +11,8 @@ const config = {
     "!**/*.d.ts",
     "!**/node_modules/**",
   ],
+  clearMocks: true,
+  collectCoverage: true,
   testEnvironment: "jest-environment-jsdom",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   testPathIgnorePatterns: [
