@@ -13,6 +13,7 @@ const config = {
   ],
   clearMocks: true,
   collectCoverage: true,
+  coverageReporters: ["html"],
   testEnvironment: "jest-environment-jsdom",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   testPathIgnorePatterns: [

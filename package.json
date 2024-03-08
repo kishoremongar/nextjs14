@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix && npm run test",
+    "lint": "eslint --fix",
     "prepare": "husky install",
-    "test": "jest --coverage",
-    "test:watch": "jest --watchAll"
+    "test": "jest --watch",
+    "test:watch": "jest --watchAll --coverage"
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
@@ -19,7 +19,8 @@
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
-      "npm run lint"
+      "npm run lint",
+      "npm run test:watch"
     ]
   },
   "devDependencies": {
